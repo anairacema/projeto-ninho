@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ninho | Visão geral</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="layout">
+    <aside class="sidebar"><a class="logo" href="index.html"><img src="assets/logo.png" alt="Ninho"
+          class="logo-img"></a>
+      <p class="label">MENU PRINCIPAL</p>
+      <nav><a class="nav-item active" href="index.html"><span>⌂</span>Visão geral</a><a class="nav-item "
+          href="rotina.html"><span>◷</span>Rotina</a><a class="nav-item " href="saude.html"><span>⊕</span>Saúde</a><a
+          class="nav-item " href="nina.html"><span>✿</span>Nina</a></nav>
+      <p class="label second">ACOMPANHAMENTO</p>
+      <nav><a class="nav-item " href="avaliacao.html"><span>♡</span>Avaliação pediátrica</a><a class="nav-item "
+          href="vacinas.html"><span>✚</span>Vacinas</a><a class="nav-item "
+          href="farmacinha.html"><span>▣</span>Farmacinha</a><a class="nav-item "
+          href="calendario.html"><span>▦</span>Calendário</a></nav>
+      <div class="side-bottom">
+        <div class="support"><b>✿ Um cuidado de cada vez.</b><small>A Nina está aqui para ajudar você.</small><a
+            href="nina.html">Conversar com a Nina →</a><a href="cadastro-usuario.html">Criar outra conta →</a></div>
+        <div class="user"><span>A</span>
+          <div><b>Ana Iracema</b><small>Minha conta</small></div>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <header class="topbar"><span>Meu espaço　/　<b>Visão geral</b></span>
+        <div class="account-area">
+          <button class="notification-bell" id="notificationButton" aria-label="Notificações">♧<i></i></button>
+          <span class="account-greeting">Olá, Ana!</span>
+          <button class="user-circle account-menu-button" id="accountTrigger" aria-label="Abrir menu da conta"
+            aria-expanded="false" aria-controls="accountDropdown">
+            <span id="accountInitial">A</span>
+          </button>
+          <section class="account-dropdown hidden" id="accountDropdown">
+            <div class="account-dropdown-head"><b>Minha conta</b><small>Dados do responsável</small></div>
+            <div class="account-data">
+              <div><small>Nome completo</small><strong id="accountName">Ana Iracema</strong></div>
+              <div><small>E-mail</small><strong id="accountEmail">Não informado</strong></div>
+              <div><small>CPF</small><strong id="accountCpf">Não informado</strong></div>
+              <div><small>Data de nascimento</small><strong id="accountBirth">Não informado</strong></div>
+              <div><small>Telefone</small><strong id="accountPhone">Não informado</strong></div>
+            </div>
+            <a class="account-edit" href="cadastro-usuario.html">Ver / atualizar meus dados</a>
+            <button class="logout-button" id="logoutButton">↪　Sair da conta</button>
+          </section>
+        </div>
+      </header>
+      <div class="page">
+        <div class="heading">
+          <div><small>NINHO • A MEMÓRIA INTELIGENTE DO CUIDADO</small>
+            <h1>Bom dia, Ana ☀</h1>
+            <p>Acompanhe os pequenos momentos e cuidados da Helena.</p>
+          </div><a class="calendar-btn" href="calendario.html">▦　Ver calendário</a>
+        </div>
+        <div class="columns">
+          <div class="left">
+            <section class="child"><img src="assets/helena-perfil.jpg">
+              <div>
+                <h2>Helena</h2>
+                <p>1 ano e 4 meses</p><small>Nascimento: 21/05/2025　 •　 Peso: 12 kg　 •　 Altura: 85 cm</small>
+              </div>
+            </section>
+            <section class="card">
+              <header>
+                <h3>Resumo de hoje</h3><span>Hoje</span>
+              </header>
+              <div class="stats">
+                <div>☾ <b>3h 19min</b><small>Tempo de sono</small></div>
+                <div>♡ <b>5 registros</b><small>Alimentação</small></div>
+                <div>＋ <b>Sem registros</b><small>Saúde</small></div>
+              </div>
+            </section>
+            <section class="card">
+              <header>
+                <h3>Últimas atualizações</h3><a href="rotina.html">Ver rotina completa</a>
+              </header>
+              <table>
+                <tr>
+                  <th>Sono</th>
+                  <th>Alimentação</th>
+                  <th>Saúde</th>
+                </tr>
+                <tr>
+                  <td>1h10</td>
+                  <td>3 registros</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>46min</td>
+                  <td>5 registros</td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>1h23</td>
+                  <td>5 registros</td>
+                  <td>—</td>
+                </tr>
+              </table>
+            </section>
+          </div>
+          <div class="right">
+            <section class="nina-card">
+              <h3>✿ Nina</h3>
+              <p>Olá, Ana! Como está sendo o dia da Helena? Posso ajudar a registrar os cuidados e organizar a rotina.
+              </p><a class="button" href="nina.html">Conversar com a Nina →</a>
+            </section>
+            <section class="card">
+              <header>
+                <h3>Acesso rápido</h3>
+              </header>
+              <div class="shortcuts"><a href="avaliacao.html">♡<b>Avaliação</b></a><a
+                  href="vacinas.html">✚<b>Vacinas</b></a><a href="farmacinha.html">▣<b>Farmacinha</b></a></div>
+            </section>
+            <section class="card">
+              <header>
+                <h3>Próximos cuidados</h3><a href="calendario.html">Calendário</a>
+              </header>
+              <p>12 NOV — Rotina de cuidados</p>
+            </section>
+          </div>
+        </div>
+      </div>
+      <footer><b>ninho ♥</b><span>A memória inteligente do cuidado.</span><span>Feito para cuidar com carinho.</span>
+      </footer>
+    </main>
+  </div>
+  <div class="mobile-top"><a class="logo" href="index.html"><img src="assets/logo.png" alt="Ninho"
+        class="logo-img"></a><button id="mobileToggle">☰</button></div>
+  <nav class="mobile-menu hidden" id="mobileMenu"><a href="index.html">Visão geral</a><a href="rotina.html">Rotina</a><a
+      href="saude.html">Saúde</a><a href="nina.html">Nina</a><a href="avaliacao.html">Avaliação pediátrica</a><a
+      href="vacinas.html">Vacinas</a><a href="farmacinha.html">Farmacinha</a><a href="calendario.html">Calendário</a>
+  </nav>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+
+</html>

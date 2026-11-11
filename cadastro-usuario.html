@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ninho | Cadastro de usuário</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="form-page">
+<div class="form-top"><a class="logo" href="index.html"><img src="assets/logo.png" alt="Ninho" class="logo-img"></a><a href="index.html" class="back-link">← Voltar ao início</a></div>
+<main class="form-wrap">
+  <div class="form-heading"><span class="form-step">ETAPA 1 DE 2</span><h1>Vamos criar sua conta 💛</h1><p>Primeiro, conte um pouquinho sobre você. Seus dados ficam organizados em um só lugar.</p></div>
+  <div class="step-track"><span class="done"></span><span></span></div>
+  <form class="registration-form" id="userRegistration">
+    <section class="form-card">
+      <h2>Seus dados pessoais</h2><p class="form-hint">Informações de quem será responsável pelo espaço Ninho.</p>
+      <div class="form-grid">
+        <label class="span-2">Nome completo *<input name="nome" placeholder="Como podemos chamar você?" autocomplete="name" required></label>
+        <label>CPF *<input name="cpf" inputmode="numeric" placeholder="000.000.000-00" required></label>
+        <label>Data de nascimento *<input name="nascimento" type="date" required></label>
+        <label>E-mail *<input name="email" type="email" placeholder="voce@email.com" autocomplete="email" required></label>
+        <label>Telefone / WhatsApp<input name="telefone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel"></label>
+      </div>
+    </section>
+    <section class="form-card">
+      <h2>Proteja sua conta</h2><p class="form-hint">Crie uma senha para acessar suas informações com segurança.</p>
+      <div class="form-grid">
+        <label>Senha *<input name="senha" type="password" minlength="8" placeholder="Mínimo de 8 caracteres" autocomplete="new-password" required></label>
+        <label>Confirmar senha *<input name="confirmarSenha" type="password" minlength="8" placeholder="Digite novamente" autocomplete="new-password" required></label>
+      </div>
+      <small class="privacy-note">Seus dados pessoais e os dados da criança devem ser tratados com cuidado e só utilizados para as finalidades do Ninho.</small>
+    </section>
+    <div class="form-actions"><a href="index.html" class="secondary-action">Cancelar</a><button class="primary-action" type="submit">Continuar para cadastro da criança →</button></div>
+  </form>
+</main>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+<script>
+document.getElementById('userRegistration').addEventListener('submit', function(e){
+  e.preventDefault();
+  const data=Object.fromEntries(new FormData(this).entries());
+  if(data.senha!==data.confirmarSenha){window.ninhoNotify?.('As senhas não conferem.');return;}
+  sessionStorage.setItem('ninhoCadastroResponsavel',JSON.stringify({...data,senha:undefined,confirmarSenha:undefined}));
+  window.location.href='cadastro-crianca.html';
+});
+</script>
+</body></html>

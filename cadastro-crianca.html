@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ninho | Cadastro da criança</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="form-page">
+<div class="form-top"><a class="logo" href="index.html"><img src="assets/logo.png" alt="Ninho" class="logo-img"></a><a href="cadastro-usuario.html" class="back-link">← Voltar para seus dados</a></div>
+<main class="form-wrap">
+  <div class="form-heading"><span class="form-step">ETAPA 2 DE 2</span><h1>Agora, vamos conhecer a criança 🌷</h1><p>Cadastre as informações iniciais. Você poderá completar e atualizar os dados depois.</p></div>
+  <div class="step-track"><span class="done"></span><span class="done"></span></div>
+  <form class="registration-form" id="childRegistration">
+    <section class="form-card">
+      <h2>Identificação da criança</h2><p class="form-hint">Essas informações ajudam a personalizar o acompanhamento.</p>
+      <div class="form-grid">
+        <label class="span-2">Nome completo *<input name="nome" placeholder="Nome da criança" required></label>
+        <label>Data de nascimento *<input name="nascimento" type="date" required></label>
+        <label>Sexo biológico (opcional)<select name="sexo"><option value="">Selecione</option><option>Feminino</option><option>Masculino</option><option>Prefiro não informar</option></select></label>
+        <label>Peso atual (kg)<input name="peso" type="number" min="0" step="0.001" placeholder="Ex.: 12,000"></label>
+        <label>Altura atual (cm)<input name="altura" type="number" min="0" step="0.1" placeholder="Ex.: 85"></label>
+        <label class="span-2">Foto da criança (opcional)<input name="foto" type="file" accept="image/*"></label>
+      </div>
+    </section>
+    <section class="form-card">
+      <h2>Informações de saúde</h2><p class="form-hint">Você pode deixar esses campos em branco e preencher depois.</p>
+      <div class="form-grid">
+        <label class="span-2">Observações médicas<textarea name="observacoes" rows="3" placeholder="Alergias, condições, cuidados importantes..."></textarea></label>
+        <label>Nome do pediatra / médico<input name="medico" placeholder="Nome do profissional"></label>
+        <label>Telefone do consultório<input name="telefoneMedico" type="tel" placeholder="(00) 00000-0000"></label>
+        <label class="span-2">Clínica ou local de atendimento<input name="localMedico" placeholder="Nome da clínica ou endereço"></label>
+      </div>
+    </section>
+    <section class="form-card consent-card">
+      <label class="consent"><input type="checkbox" name="confirmacao" required><span>Confirmo que sou responsável pela criança e que tenho autorização para cadastrar essas informações. *</span></label>
+    </section>
+    <div class="form-actions"><a href="cadastro-usuario.html" class="secondary-action">Voltar</a><button class="primary-action" type="submit">Finalizar cadastro ♥</button></div>
+  </form>
+</main>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+<script>
+document.getElementById('childRegistration').addEventListener('submit',function(e){
+ e.preventDefault();
+ const data=Object.fromEntries(new FormData(this).entries());
+ const responsible=JSON.parse(sessionStorage.getItem('ninhoCadastroResponsavel')||'{}');
+ sessionStorage.setItem('ninhoCadastroInicial',JSON.stringify({responsavel,crianca:{...data,foto:undefined}}));
+ window.ninhoNotify?.('Cadastro demonstrativo concluído! Na próxima etapa vamos conectar ao banco de dados.');
+ setTimeout(()=>window.location.href='index.html',1400);
+});
+</script>
+</body></html>
